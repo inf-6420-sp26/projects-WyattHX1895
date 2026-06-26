@@ -1,0 +1,30 @@
+*{
+    box-sizing:border-box;
+}
+header{
+    font-family:"raleway";
+    padding: 40px 40px;
+    background-image: url("../images/paul-gilmore-145802-unsplash.jpg");
+    background-size: cover;
+
+    }
+body{
+    margin: 1.5;
+    line-height:  1.5em;
+    padding: 40px 40px;
+    font-family: "nunito", Arial, sans-serif;
+}
+#menu{
+    background-color:#F0F0F0 ;
+    
+
+
+}
+.container{
+    width:min(1170px);
+    margin: 0 auto;
+}
+footer{
+    background-color: #3e1305;
+    
+}
