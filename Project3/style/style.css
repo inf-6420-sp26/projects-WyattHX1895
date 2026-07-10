@@ -1,0 +1,507 @@
+/* ==========================================================================
+   Tokens
+   ========================================================================== */
+:root {
+  --cream: #faf3e6;
+  --oat: #efe3cf;
+  --oat-dark: #e2d2b4;
+  --cocoa-900: #2b1810;
+  --cocoa-700: #5c3a28;
+  --cocoa-500: #7a5136;
+  --butter-400: #e8b64a;
+  --butter-300: #f0cd7c;
+  --molasses-600: #8a3324;
+  --molasses-700: #6f271b;
+  --line: rgba(43, 24, 16, 0.14);
+
+  --font-display: "Big Shoulders Display", sans-serif;
+  --font-body: "Work Sans", sans-serif;
+  --font-mono: "Space Mono", monospace;
+
+  --max-width: 960px;
+  --radius: 4px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--cocoa-900);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--cocoa-900);
+  line-height: 1.05;
+  margin: 0 0 0.4em;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--molasses-700);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--molasses-600);
+}
+
+:focus-visible {
+  outline: 3px solid var(--butter-400);
+  outline-offset: 2px;
+}
+
+ul, ol {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   Header / Nav — flexbox
+   ========================================================================== */
+.site-header {
+  background: var(--cocoa-900);
+  color: var(--cream);
+  padding: 0 1.25rem;
+}
+
+.nav-wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--cream);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--cream);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 1.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-nav a {
+  color: var(--oat);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.98rem;
+  letter-spacing: 0.02em;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--butter-300);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--butter-400);
+  border-bottom-color: var(--butter-400);
+}
+
+/* ==========================================================================
+   Hero / intro
+   ========================================================================== */
+.intro {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem 0 3rem;
+}
+
+.intro .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--butter-400);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+}
+
+.intro h1 {
+  color: var(--cream);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  max-width: 18ch;
+}
+
+.intro p {
+  color: var(--oat);
+  max-width: 62ch;
+}
+
+.stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  margin: 1.5rem 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.stat-row li {
+  font-family: var(--font-mono);
+  color: var(--cream);
+  font-size: 0.9rem;
+}
+
+.stat-row strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--butter-400);
+  font-weight: 700;
+}
+
+
+
+/* ==========================================================================
+   Main content
+   ========================================================================== */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.section-block + .section-block {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+/* Ingredient grid — CSS Grid */
+.ingredient-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.ingredient-card {
+  background: var(--oat);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.ingredient-card h3 {
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.85rem;
+}
+
+.ingredient-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredient-card li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 0.95rem;
+}
+
+.ingredient-card li:last-child {
+  border-bottom: none;
+}
+
+.ingredient-card .qty {
+  font-family: var(--font-mono);
+  color: var(--molasses-700);
+  white-space: nowrap;
+  font-size: 0.88rem;
+}
+
+/* Instructions — numbered, sequence is real so numbering is justified */
+.steps {
+  list-style: none;
+  padding: 0;
+  counter-reset: step;
+}
+
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 0 0 1.5rem 3.2rem;
+  margin-bottom: 0.25rem;
+  border-left: 2px solid var(--oat-dark);
+}
+
+.steps li:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: -19px;
+  top: -2px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--molasses-600);
+  color: var(--cream);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+}
+.notes-heading{
+  
+}
+
+/* ==========================================================================
+   Resources page
+   ========================================================================== */
+.page-intro {
+  max-width: 62ch;
+  font-size: 1.05rem;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.resource-card {
+  background: var(--oat);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid var(--molasses-600);
+}
+
+.resource-card a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.resource-card a:hover,
+.resource-card a:focus-visible {
+  text-decoration: underline;
+}
+
+.substitute-block {
+  background: var(--oat);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.substitute-block img {
+  border-radius: var(--radius);
+}
+
+/* ==========================================================================
+   Contact page — form
+   ========================================================================== */
+.contact-shell {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-card {
+  width: 100%;
+  max-width: 640px;
+  background: var(--oat);
+  border-radius: var(--radius);
+  padding: 2.25rem;
+}
+
+.contact-card p.lede {
+  max-width: 52ch;
+}
+
+form {
+  margin-top: 1.25rem;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cocoa-700);
+}
+
+label .optional {
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--cocoa-500);
+  font-family: var(--font-body);
+}
+
+input,
+textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--cream);
+  color: var(--cocoa-900);
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--butter-400);
+  outline-offset: 1px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: var(--font-body);
+}
+
+.form-action {
+  margin-top: 0.5rem;
+}
+
+button[type="submit"] {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background: var(--molasses-600);
+  color: var(--cream);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus-visible {
+  background: var(--molasses-700);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 1.25rem 2.5rem;
+  font-size: 0.85rem;
+  color: var(--cocoa-500);
+}
+
+/* ==========================================================================
+   Responsive — single breakpoint at 700px
+   ========================================================================== */
+@media (max-width: 700px) {
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  .site-nav {
+    flex-basis: 100%;
+    display: none;
+  }
+
+  .site-nav.is-open {
+    display: block;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 0 1rem;
+  }
+
+  .stat-row {
+    gap: 1rem 1.5rem;
+  }
+
+  .proof-timeline {
+    flex-direction: column;
+  }
+
+  .proof-timeline .stage-rest {
+    order: -1;
+  }
+
+  .ingredient-grid,
+  .resource-grid,
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    padding: 1.5rem;
+  }
+}
