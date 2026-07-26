@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <meta name="description" content="Video Gallery">
+    <title> Video Library  </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+    <!-- accessibility link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!--header-->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="site-branding">
+                <div class="logo-placeholder" aria-hidden="true"></div>
+                <a href="index.html" class="site-title">Video Library</a>
+            </div>
+            <nav class="main-nav" aria-label="Main-Navigation">
+                <ul>
+                    <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+                    <li><a href="video-1.html" class="nav-link">Video 1</a></li>
+                    <li><a href="video-2.html" class="nav-link">Video 2</a></li>
+                    <li><a href="video-3.html" class="nav-link">Video 3</a></li>
+                    <li><a href="video-4.html" class="nav-link">Video 4</a></li>
+                    <li><a href="video-5.html" class="nav-link">Video 5</a></li>
+                    <li><a href="video-6.html" class="nav-link">Video 6</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="main-content">
+            <div class="video-page">
+ 
+            <a href="index.html" class="breadcrumb">&larr; Back to library</a>
+ 
+            <div class="video-player-wrapper">
+                
+                <video controls poster="assets/images/video-1-frame1.jpg">
+                    <source src="assets/videos/video-1.mp4" type="video/mp4">
+                    <track label="English" kind="captions" srclang="en" src="assets/captions/video-1.vtt" default>
+                    Your browser doesn't support embedded video.
+                </video>
+            </div>
+ 
+            <div class="video-meta">
+                <span class="video-duration">0:32</span>
+            </div>
+ 
+            <h1>Foraging Bear</h1>
+            <p class="video-description">
+                A brown bear in search of food. Shot at a distance with a long lens
+                during early autumn foraging season.
+            </p>
+ 
+            <section class="comments-section" aria-labelledby="comments-heading">
+                <h2 id="comments-heading" class="comments-heading">Comments (3)</h2>
+ 
+                <ul class="comment-list">
+                    <li class="comment">
+                        <div class="comment-avatar" aria-hidden="true">JM</div>
+                        <div class="comment-body">
+                            <div class="comment-head">
+                                <span class="comment-author">Jordan M.</span>
+                                <span class="comment-time">2 days ago</span>
+                            </div>
+                            <p class="comment-text">Tempus leo eu aenean sed diam urna tempor.</p>
+                        </div>
+                    </li>
+                    <li class="comment">
+                        <div class="comment-avatar" aria-hidden="true">AR</div>
+                        <div class="comment-body">
+                            <div class="comment-head">
+                                <span class="comment-author">Aiko R.</span>
+                                <span class="comment-time">5 days ago</span>
+                            </div>
+                            <p class="comment-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                        </div>
+                    </li>
+                    <li class="comment">
+                        <div class="comment-avatar" aria-hidden="true">TK</div>
+                        <div class="comment-body">
+                            <div class="comment-head">
+                                <span class="comment-author">Theo K.</span>
+                                <span class="comment-time">1 week ago</span>
+                            </div>
+                            <p class="comment-text">Pulvinar vivamus fringilla lacus nec metus bibendum egestas.</p>
+                        </div>
+                    </li>
+                </ul>
+ 
+                <form class="comment-form" action="#" method="post">
+                    <h3>Add a comment</h3>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="comment-name">Name</label>
+                            <input type="text" id="comment-name" name="name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="comment-email">Email</label>
+                            <input type="email" id="comment-email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-field" style="margin-bottom: 1rem;">
+                        <label for="comment-text">Comment</label>
+                        <textarea id="comment-text" name="comment" required></textarea>
+                    </div>
+                    <button type="submit" class="comment-submit">Post comment</button>
+                </form>
+            </section>
+ 
+        </div>
+    </main>
+ 
+    <footer class="site-footer">
+        <p>&copy; 2026 INF 6420 Project 4.</p>
+    </footer>
+</body>
+</html>
